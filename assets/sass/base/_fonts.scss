@@ -1,0 +1,17 @@
+$font-size-zero: 0;
+$font-size-base: 62.5%;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,700&display=swap');
+
+$font-family: (
+  primary: #{'Roboto', sans-serif}
+);
+
+
+@function family($key) {
+    @if map-has-key($font-family, $key) {
+      @return map-get($font-family, $key);
+    }
+    @warn 'Unknown `#{$key}` in $font-family.';
+    @return null;
+}

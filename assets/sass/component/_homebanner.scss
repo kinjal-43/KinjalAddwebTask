@@ -1,0 +1,155 @@
+.carousel {
+    position: relative;
+    z-index: 1;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $interface-black;
+        z-index: -1;
+    }
+    &-item{
+        img{
+            height: 80rem;
+            object-fit: cover;
+            object-position: center center;
+            @include media-breakpoint-down(lg) {
+                height: 100vh;
+            }
+        }
+        .shape1{
+            background: transparentize($interface-dark, 0.2);
+            width: 60rem;
+            height: 55.4rem;
+            position: absolute;
+            bottom: 5.2rem;
+            left: 4.8rem;
+            @include media-breakpoint-down(xl) {
+                width: 55rem;
+                height: 46.4rem;
+                bottom: 14.2rem;
+            }
+            @include media-breakpoint-down(lg) {
+                width: 37rem;
+                height: 37.4rem;
+                bottom: 19.2rem;
+                left: 2.5rem;
+            }
+            @include media-breakpoint-down(md) {
+                width: 34.5rem;
+                left: 1.5rem;
+                height: 16rem;
+                bottom: unset;
+                top: 11.8rem;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-left: 0 solid transparent;
+                border-right: 30rem solid transparent;
+                border-top: 55.4rem solid transparentize($interface-dark, 0.2);
+                left: 100%;
+                @include media-breakpoint-down(xl) {
+                    border-right: 27rem solid transparent;
+                    border-top: 46.4rem solid transparentize($interface-dark, 0.2);                
+                }
+                @include media-breakpoint-down(lg) {
+                    border-right: 19rem solid transparent;
+                    border-top: 37.4rem solid transparentize($interface-dark, 0.2);                
+                }
+                @include media-breakpoint-down(md) {
+                    border-right: 0rem solid transparent;
+                    border-top: 9rem solid transparentize($interface-dark, 0.2);      
+                    left: 0;
+                    border-left: 34.5rem solid transparent;
+                    top: 100%;
+                }
+            }
+        }
+    }
+  
+    .carousel-caption {
+        bottom: 16.5rem;
+        left: 25.8rem;
+        right: unset;
+        padding: 0;
+        @include media-breakpoint-down(xl) {
+            left: 18.8rem;
+            bottom: 24.5rem;
+        }
+        @include media-breakpoint-down(lg) {
+            left: 7.8rem;
+            bottom: 26.5rem;
+        }
+        @include media-breakpoint-down(md) {
+            left: 3.6rem;
+            bottom: unset;
+            top: 16rem;
+        }
+        h1 {
+            @extend .o-header1; 
+            text-align: left;
+            max-width: 90rem;       
+            @include media-breakpoint-down(xl) {
+                max-width: 71rem;
+            }
+            @include media-breakpoint-down(lg) {
+                max-width: 65rem;
+            }
+            @include media-breakpoint-down(md) {
+                max-width: unset;
+            }
+        }      
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        top: unset;
+        bottom: 8rem;
+        right: 7.3rem;
+        width: auto;
+        @include media-breakpoint-down(md) {
+            bottom: 8.8rem;
+        }
+        &:hover{
+            &-icon{
+                opacity: 1;
+            }
+        }
+        &-icon{
+            width: 4rem;
+            opacity: 0.75;
+        }
+       
+    }
+    .carousel-control-prev {
+        right: 12rem;
+        left: unset;
+        @include media-breakpoint-down(md) {
+            left: 0;
+            right: 5.2rem;
+        }
+        &:hover{
+            &-icon{
+                opacity: 1;
+            }
+        }
+        &-icon{
+            background-image: url('../images/arrow-left.svg');           
+        }
+    }
+    .carousel-control-next {
+        @include media-breakpoint-down(md) {
+            left: 5.2rem;
+            right: 0;
+        }
+        &-icon{
+            background-image: url('../images/arrow-right.svg'); 
+        }
+    }
+    
+}

@@ -1,0 +1,14 @@
+@import "../bootstrap/bootstrap.scss";
+
+//settings
+
+@import "base/colors";
+@import "base/fonts";
+@import "base/type";
+
+
+//components
+
+@import "component/header";
+@import "component/homebanner";
+
